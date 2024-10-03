@@ -13,14 +13,14 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nurmuhammad9888/telegrambot.git"
+    "url": "git+https://github.com/nurmuhammad9888/telebot"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nurmuhammad9888/telegrambot/issues"
+    "url": "https://github.com/nurmuhammad9888/telebot/issues"
   },
-  "homepage": "https://github.com/nurmuhammad9888/telegrambot#readme",
+  "homepage": "https://github.com/nurmuhammad9888/telebot#readme",
   "description": ""
 }
