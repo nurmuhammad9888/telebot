@@ -22,7 +22,7 @@ bot.on('message',msg =>{
     console.log(msg);
 })
 // Kalit so'zlar
-const keywords = ['sultan taxi ofis','yunusobod','yunusobot', 'chilonzor', 'ttz', 'olmazor', 'kadisheva', 'bektimir', 'sergeli', 'admin', 'admn', 'pul yechish', 'pul chiqarish', 'brend', 'qarz berib', 'qarz tashlab', 'limit','юнусобод', 'чилонзор', 'ттз', 'олмазор', 'кадишева', 'бектимир', 'сергели', 'админ', 'адмн', 'пул ечиш', 'пул чиқариш', 'бренд'];
+const keywords = ['sultan taxi ofis','yunusobod','yunusobot', 'chilonzor', 'ttz', 'olmazor', 'kadisheva', 'bektimir', 'sergeli', 'admin', 'admn', 'yordam', 'tel nomir','pul yechish', 'pul chiqarish', 'brend', 'qarz berib', 'qarz tashlab', 'limit','юнусобод', 'чилонзор', 'ттз', 'олмазор', 'кадишева', 'бектимир', 'сергели', 'админ', 'адмн', 'пул ечиш', 'пул чиқариш', 'бренд'];
 
 // Habardagi kalit so'zlarni aniqlash uchun funksiya
 function findKeywords(message) {
@@ -54,8 +54,8 @@ bot.on('message', (msg) => {
     let htmlTeg = { parse_mode: 'HTML'}
     
     // JSON ma'lumotlarini faylga qo'shish
-    // fs.appendFile('messages.json', JSON.stringify(messageData) + '\n', (err) => {
-        //     if (err) {
+    // fs.appendFile('messages.json', JSON.stringify(messageData)  + '\n ', (err) => {
+    //         if (err) {
     //         console.error('Xatolik yuz berdi:', err);
     //         return;
     //     }
@@ -64,14 +64,13 @@ bot.on('message', (msg) => {
     
     
     // Avtomatik javoblar
-    if (messageText === 'salom') {
+    if (messageText === '/start') {
+        bot.sendMessage(chatId, ' ASSALOMU ALAYKUM SULTAN TAXI YORDAMCHI BOTGA XUSH KELIBSIZ ');
+    } 
+    else if (messageText === 'salom') {
         const messageText = 'Salom, qanday yordam bera olishim mumkin?'; 
         bot.sendMessage(chatId, messageText);
-    } 
-    else if (messageText === '/start') {
-        bot.sendMessage(chatId, ' ASSALOMU ALAYKUM SULTAN TAXI YORDAMCHI BOTGA XUSH KELIBSIZ ', `@SULTANTAXITASHKENT TELEGRAM GURUHGA A'ZO BULING`);
-    } 
-    else if (foundKeywords.length > 0 && foundKeywords[0] === "yunusobod" || foundKeywords[0] === "yunusobot" || foundKeywords[0] === "юнусобод" || messageText === '/yunusobod') {
+    } else if (foundKeywords.length > 0 && foundKeywords[0] === "yunusobod" || foundKeywords[0] === "yunusobot" || foundKeywords[0] === "юнусобод" || messageText === '/yunusobod') {
         const options = {
             parse_mode: 'HTML',
             reply_markup: {
@@ -250,7 +249,7 @@ bot.on('message', (msg) => {
                                         `  \n\n`,
                                         {...replay ,...htmlTeg})
                                     } 
-                                    else if (foundKeywords.length > 0 && foundKeywords[0] === 'admin' || foundKeywords[0] === 'admn' || foundKeywords[0] === 'админ' || foundKeywords[0] === 'адмн' || foundKeywords[0] === 'qarz berib' || foundKeywords[0] === 'qarz tashlab' || foundKeywords[0] === 'limit') {
+                                    else if (foundKeywords.length > 0 && foundKeywords[0] === 'admin' || foundKeywords[0] === 'admn' || foundKeywords[0] === 'yordam'  || foundKeywords[0] === 'админ' || foundKeywords[0] === 'адмн' || foundKeywords[0] === 'qarz berib' || foundKeywords[0] === 'qarz tashlab' || foundKeywords[0] === 'limit' || messageText === '?' || messageText === '.') {
                                         bot.sendMessage(chatId, 
                                             `👋Assalomu alaykum \n`+
                                             `🧐Sizga qanday yordam bera olaman ? \n`+
@@ -265,7 +264,7 @@ bot.on('message', (msg) => {
                                             `📱+998781130848 biz bilan bog'laning \n`,
                                             {...replay ,...htmlTeg})
                                         }
-                                        else if(foundKeywords.length > 0 && foundKeywords[0] === 'sultan taxi ofis' || messageText === '/malumot@sultantaxiyordamchi_bot' || messageText === '/malumot'){
+                                        else if(foundKeywords.length > 0 && foundKeywords[0] === 'sultan taxi ofis' || foundKeywords[0] === 'tel nomir' || messageText === '/malumot@sultantaxiyordamchi_bot' || messageText === '/malumot'){
                                             const servicesMessage = `👨🏻‍💻  ASSALOMU ALAYKUM HAYDOVCHILAR SIZNI OFFICEMIZDA KUTIB QOLAMIZ VA TURLI XIL XIZMATLARIMIZNI TAKLIF QILAMIZ\n\n`
                                             +
                                             `❇️ LITSENZIYA \n`+
