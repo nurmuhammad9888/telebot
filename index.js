@@ -19,10 +19,10 @@ app.listen(port, () => {
 })
 
 bot.on('message',msg =>{
-    console.log(msg);
+    // console.log(msg);
 })
 // Kalit so'zlar
-const keywords = ['sultan taxi ofis','yunusobod','yunusobot', 'chilonzor', 'ttz', 'olmazor', 'kadisheva', 'bektimir', 'sergeli', 'admin', 'admn', 'yordam', 'tel nomir','pul yechish', 'pul chiqarish', 'brend', 'qarz berib', 'qarz tashlab', 'limit','юнусобод', 'чилонзор', 'ттз', 'олмазор', 'кадишева', 'бектимир', 'сергели', 'админ', 'адмн', 'пул ечиш', 'пул чиқариш', 'бренд'];
+const keywords = ['sultan taxi ofis','yunusobod','yunusobot', 'chilonzor', 'ttz', 'olmazor', 'kadisheva', 'bektimir', 'sergeli', 'admin', 'admn', 'yordam', 'tel nomir', 'tel raqam','pul yechish', 'pul chiqarish', 'brend', 'qarz berib', 'qarz tashlab', 'limit','юнусобод', 'чилонзор', 'ттз', 'олмазор', 'кадишева', 'бектимир', 'сергели', 'админ', 'адмн', 'пул ечиш', 'пул чиқариш', 'бренд'];
 
 // Habardagi kalit so'zlarni aniqlash uchun funksiya
 function findKeywords(message) {
@@ -126,12 +126,13 @@ bot.on('message', (msg) => {
                     parse_mode: 'HTML',
                     reply_markup: {
                         inline_keyboard: [
-                            [{ text: 'Lokatsiya', url: 'https://maps.app.goo.gl/P6aSdprfa8Mrw1yv6' }]
+                            [{ text: 'Lokatsiya', url: 'https://maps.app.goo.gl/RuqDJEHTfmqqZJTK7' }]
                         ]
                     }
                 };
                 bot.sendMessage(chatId,
-                    `<b> Chilonzor Tumani, 18-Mavze ,16-Uy </b> \n` +
+                    `<b> Chilonzor Tumani, 21-mavze, 9-uy 63-xonadon </b> \n` +
+                    ` Mo'ljal: Uchtepa elektroset ro'parasida  \n` +
                     `💠 ISH VAQTI 24/7 \n` +
                     `☎️ +998939317550 \n` +
                     `☎️ +998781130848 \n` +
@@ -249,7 +250,7 @@ bot.on('message', (msg) => {
                                         `  \n\n`,
                                         {...replay ,...htmlTeg})
                                     } 
-                                    else if (foundKeywords.length > 0 && foundKeywords[0] === 'admin' || foundKeywords[0] === 'admn' || foundKeywords[0] === 'yordam'  || foundKeywords[0] === 'админ' || foundKeywords[0] === 'адмн' || foundKeywords[0] === 'qarz berib' || foundKeywords[0] === 'qarz tashlab' || foundKeywords[0] === 'limit' || messageText === '?' || messageText === '.') {
+                                    else if (foundKeywords.length > 0 && foundKeywords[0] === 'admin' || foundKeywords[0] === 'admn' || messageText === 'yordam'  || foundKeywords[0] === 'админ' || foundKeywords[0] === 'адмн' || foundKeywords[0] === 'qarz berib' || foundKeywords[0] === 'qarz tashlab' || foundKeywords[0] === 'limit' || messageText === '?' || messageText === '.') {
                                         bot.sendMessage(chatId, 
                                             `👋Assalomu alaykum \n`+
                                             `🧐Sizga qanday yordam bera olaman ? \n`+
@@ -264,7 +265,21 @@ bot.on('message', (msg) => {
                                             `📱+998781130848 biz bilan bog'laning \n`,
                                             {...replay ,...htmlTeg})
                                         }
-                                        else if(foundKeywords.length > 0 && foundKeywords[0] === 'sultan taxi ofis' || foundKeywords[0] === 'tel nomir' || messageText === '/malumot@sultantaxiyordamchi_bot' || messageText === '/malumot'){
+                                    else if (foundKeywords.length > 0 && foundKeywords[0] === 'tel nomir' || messageText === 'tel raqam' ) {
+                                        bot.sendMessage(chatId, 
+                                            `👋Assalomu alaykum \n`+
+                                            `🧐Sizga qanday yordam bera olaman ? \n`+
+                                            `☎️Call Centre: +998781130848 (24/7)  \n `+
+                                            `939317550 Chilonzor  \n `+
+                                            `930714335 TTZ \n `+
+                                            `939728844 Olmazor \n `+
+                                            `931174422 Yunusobod  \n `+
+                                            `948763337 Kadisheva  \n `+
+                                            `948793337 Bektemir yoki \n ` +
+                                            `947918883 Sergeli biz bilan bog'laning \n`,
+                                            {...replay ,...htmlTeg})
+                                        }
+                                        else if(foundKeywords.length > 0 && foundKeywords[0] === 'sultan taxi ofis' || messageText === '/malumot' || messageText === '/malumot@sultantaxiyordamchi_bot'){
                                             const servicesMessage = `👨🏻‍💻  ASSALOMU ALAYKUM HAYDOVCHILAR SIZNI OFFICEMIZDA KUTIB QOLAMIZ VA TURLI XIL XIZMATLARIMIZNI TAKLIF QILAMIZ\n\n`
                                             +
                                             `❇️ LITSENZIYA \n`+
@@ -279,7 +294,7 @@ bot.on('message', (msg) => {
                                             `☎️  +998931174422 \n`+
                                             `📝 @SULTANTAXI \n\n`
                                             +
-                                            `2.🔔Chilonzor Tumani, 18-Mavze ,16-Uy,2x \n `+
+                                            `2.🔔Chilonzor Tumani, 21-mavze, 9-uy 63-xonadon \n `+
                                             `💠 ISH VAQTI 24/7 \n `+
                                             `☎️ +998939317550 \n `+
                                             `📝 @SULTANTAXICHILONZOR \n\n`
